@@ -10,7 +10,7 @@ const router = Router();
 
 const airportUpdate = Joi.object().keys({
     icao: Joi.string().required().min(1).max(4).alphanum(),
-    infectionLevel: Joi.number().required().min(-1).max(4).integer(),
+    infectionLevel: Joi.number().required().min(-1).max(10).integer(),
 });
 
 const addAirport = Joi.object().keys({

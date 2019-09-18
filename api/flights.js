@@ -1,6 +1,5 @@
 import { Router } from 'express';
 import Joi from 'joi';
-import { Status } from '../util';
 
 const db = require('../db');
 const flights = db.get('flights');
@@ -48,7 +47,7 @@ router.post('/addFlight', (req, res, next) => {
             flightNum,
             departure,
             arrival,
-            status: Status.OFFLINE
+            // status: Status.OFFLINE
         };
 
         flights.insert(message).then(insertedMessage => {

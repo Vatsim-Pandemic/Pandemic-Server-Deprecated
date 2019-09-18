@@ -13,14 +13,10 @@ const port = 5000;
 app.use(morgan('dev'));
 app.use(helmet());
 app.use(express.json());
-// app.use(cors);
-
-// app.options('localhost:3000', cors());
-//app.options('*', cors());
 
 const corsOptions = {
     origin: function (origin, callback) {
-        if(!origin || origin.indexOf("localhost") > -1) callback(null, true);
+        if(!origin || origin.indexOf("localhost") > -1 || origin.indexOf("vatsim-pandemic.github.io") > -1 || true) callback(null, true);
         else callback(new Error('Not allowed by CORS'));
     },
     optionsSuccessStatus: 200
