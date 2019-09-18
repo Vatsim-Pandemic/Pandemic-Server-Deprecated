@@ -16,7 +16,7 @@ app.use(express.json());
 
 const corsOptions = {
     origin: function (origin, callback) {
-        if(!origin || origin.indexOf("localhost") > -1 || origin.indexOf("vatsim-pandemic.github.io") > -1 || true) callback(null, true);
+        if(!origin || origin.indexOf("localhost") > -1 || origin.indexOf("vatsim-pandemic.github.io") > -1) callback(null, true);
         else callback(new Error('Not allowed by CORS'));
     },
     optionsSuccessStatus: 200
